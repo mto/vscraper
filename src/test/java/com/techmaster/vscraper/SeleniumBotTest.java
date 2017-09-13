@@ -40,7 +40,14 @@ public class SeleniumBotTest {
             }
         };
 
-        BotWriter bw = new BotWriter();
+        BotWriter bw = new BotWriter("target");
+
+        SeleniumBot sb = new SeleniumBot(cfg, bw);
+        try {
+            sb.fetchHomePage();
+        } finally {
+            sb.shutDown();
+        }
     }
 
 }

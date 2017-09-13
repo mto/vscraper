@@ -58,4 +58,9 @@ public class SeleniumBot {
         // 2. Takes screenshot and save it as  cfg.getTargetName() + /sports_screnshot.png
     }
 
+    public void shutDown(){
+        browser.manage().deleteAllCookies();
+        browser.close();
+    }
+
 }

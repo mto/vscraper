@@ -40,6 +40,9 @@ public class HttpBotTest {
             }
         };
 
-        BotWriter bw = new BotWriter();
+        BotWriter bw = new BotWriter("target");
+
+        HttpBot httpBot = new HttpBot(cfg, bw);
+        httpBot.fetchHomePage();
     }
 }
