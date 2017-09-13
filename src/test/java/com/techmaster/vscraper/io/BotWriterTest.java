@@ -12,7 +12,7 @@ public class BotWriterTest {
 
     @Test
     public void streamToFile() {
-        BotWriter bw = new BotWriter();
+        BotWriter bw = new BotWriter("target");
         ByteArrayInputStream is = new ByteArrayInputStream("123456789".getBytes());
         bw.streamToFile(is, "/s2f.txt");
 

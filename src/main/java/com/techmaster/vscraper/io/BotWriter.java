@@ -2,9 +2,13 @@ package com.techmaster.vscraper.io;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 /**
  * @author <a href="hoang281283@gmail.com">Minh Hoang TO</a>
@@ -36,6 +40,11 @@ public class BotWriter {
     public void streamToFile(InputStream in, String dstPath) {
         Path path = new File(rootDir + dstPath).toPath();
         //TODO: Use methods in java.nio.file.Files to write to destinatation file in REPLACE_EXISTING mode
+        try {
+            Files.copy(in, path, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException ioex) {
+            ioex.printStackTrace();
+        }
     }
 
     public void stringToFile(String s, String dstPath) {
