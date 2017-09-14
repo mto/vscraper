@@ -42,7 +42,7 @@ public class SeleniumBotTest {
 
         BotWriter bw = new BotWriter("target");
 
-        SeleniumBot sb = new SeleniumBot(cfg, bw);
+        SeleniumBot sb = new SeleniumBot(cfg, bw, "/Users/mto/java/selenium/drivers/chromedriver");
         try {
             sb.fetchHomePage();
         } finally {
